@@ -49,7 +49,7 @@
 
 
     <div class="wrapper">
-        <form class="form-signin">       
+        <form class="form-signin" method="post" action="login">       
           <h4 class="form-signin-heading">Registered Customers</h4>
           <input type="text" class="form-control" name="username" id="username" placeholder="Username" required="" autofocus="" />
           <input type="password" class="form-control" name="password" id="password" placeholder="Password" required=""/>  
