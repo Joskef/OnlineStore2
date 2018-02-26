@@ -18,14 +18,14 @@ class users extends CI_Model
 
     function queryAllItems(){
         $this->db->select('*');
-        $this->db->from(items);
+        $this->db->from(TABLE_ITEM);
         $this->db->order_by(item_id);
         $query = $this->db->get();
         return $query->result();
     }
 
-    function insertUsers() { ($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd, $shippingaddress, $secretquestion)
-        $insertUserData=array(
+    function insertUsers ($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd, $shippingaddress, $secretquestion)
+    {    $insertUserData=array(
             user_type => intval($user_set),
             username => $user_name,
             password => $password,
@@ -35,23 +35,25 @@ class users extends CI_Model
 			cc => intval($ccno),
 			email => $emailadd,
 			shippingaddress => $shippingaddress,
-			secretquestion => $secretquestion;
+			secretquestion => $secretquestion
+        );
 			
         $this->db->insert(user, $insertUserData);
 
     }
 	
-	function insertItem (){ ($item_category, $item_name, $item_price, $item_qty, $item_desc)
-		$insertItemData=array(
+	function insertItem($item_category, $item_name, $item_price, $item_qty, $item_desc)
+    {
+        $insertItemData=array(
 			category_num => intval($item_category),
 			Name => $item_name,
 			price => intval($item_price),
 			qty => intval($item_qty),
-			desc => $item_desc;
+			desc => $item_desc
+		);
+		$this->db->insert(category, $insertItemData);
 			
-		$this->db->insert(category, $insertItemData)
-			
-		)
+		
 		
 	}
 		
