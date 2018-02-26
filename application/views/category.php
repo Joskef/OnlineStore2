@@ -11,11 +11,11 @@
     <title>Category</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/navbar.css" rel="stylesheet">
-    <link href="fonts/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="assets/css/navbar.css" rel="stylesheet">
+    <link href="assets/fonts/css/fontawesome-all.min.css" rel="stylesheet">
 
   </head>
 
