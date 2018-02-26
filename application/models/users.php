@@ -35,22 +35,23 @@ class users extends CI_Model
 			cc => intval($ccno),
 			email => $emailadd,
 			shippingaddress => $shippingaddress,
-			secretquestion => $secretquestion;
-        )
+			secretquestion => $secretquestion
+        );
 			
         $this->db->insert(user, $insertUserData);
 
     }
 	
-	function insertItem (){ ($item_category, $item_name, $item_price, $item_qty, $item_desc)
-		$insertItemData=array(
+	function insertItem($item_category, $item_name, $item_price, $item_qty, $item_desc)
+    {
+        $insertItemData=array(
 			category_num => intval($item_category),
 			Name => $item_name,
 			price => intval($item_price),
 			qty => intval($item_qty),
-			desc => $item_desc;
-		)	
-		$this->db->insert(category, $insertItemData)
+			desc => $item_desc
+		);
+		$this->db->insert(category, $insertItemData);
 			
 		
 		
