@@ -49,7 +49,7 @@ class Controller extends CI_Controller
         //$data['errorMessage'] = null;
 
         //$this->load->view('header');
-        $this->load->view('login');//, $data); // $this->load->view('home', $data); set to this if data is set
+        $this->load->view('anon_homepage');//, $data); // $this->load->view('home', $data); set to this if data is set
         //$this->load->view('footer');
     }
 }
