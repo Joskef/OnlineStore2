@@ -11,11 +11,11 @@
     <title>Login page</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/login.css" rel="stylesheet">
-    <link href="fonts/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="assets/css/login.css" rel="stylesheet">
+    <link href="assets/fonts/css/fontawesome-all.min.css" rel="stylesheet">
 
   </head>
     
@@ -59,8 +59,8 @@
       </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/jquery/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 
