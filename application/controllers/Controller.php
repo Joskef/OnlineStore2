@@ -56,6 +56,6 @@ class Controller extends CI_Controller
     public function login()
     {
         //login stuff
-        //$this->load->view('welcome_message');
+        $this->load->view('login');
     }
 }
