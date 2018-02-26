@@ -52,4 +52,10 @@ class Controller extends CI_Controller
         $this->load->view('anon_homepage');//, $data); // $this->load->view('home', $data); set to this if data is set
         //$this->load->view('footer');
     }
+    
+    public function login()
+    {
+        //login stuff
+        //$this->load->view('welcome_message');
+    }
 }
