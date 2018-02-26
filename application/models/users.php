@@ -24,7 +24,7 @@ class survey_model extends CI_Model
         return $query->result();
     }
 
-    function insertUsers($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd)
+    function insertUsers($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd, $shippingaddress, $secretquestion)
         $insertUserData=array(
             user_type => intval($user_set),
             username => $user_name,
@@ -33,7 +33,9 @@ class survey_model extends CI_Model
 			Last_name => $last,
 			Address => $address,
 			cc => intval($ccno),
-			email => $emailadd ;
+			email => $emailadd,
+			shippingaddress => $shippingaddress,
+			secretquestion => $secretquestion;
 			
         $this->db->insert(user, $insertUserData);
 
