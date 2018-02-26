@@ -24,8 +24,8 @@ class users extends CI_Model
         return $query->result();
     }
 
-    function insertUsers() { ($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd, $shippingaddress, $secretquestion)
-        $insertUserData=array(
+    function insertUsers ($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd, $shippingaddress, $secretquestion)
+    {    $insertUserData=array(
             user_type => intval($user_set),
             username => $user_name,
             password => $password,
@@ -36,6 +36,7 @@ class users extends CI_Model
 			email => $emailadd,
 			shippingaddress => $shippingaddress,
 			secretquestion => $secretquestion;
+        )
 			
         $this->db->insert(user, $insertUserData);
 
@@ -48,10 +49,10 @@ class users extends CI_Model
 			price => intval($item_price),
 			qty => intval($item_qty),
 			desc => $item_desc;
-			
+		)	
 		$this->db->insert(category, $insertItemData)
 			
-		)
+		
 		
 	}
 		
