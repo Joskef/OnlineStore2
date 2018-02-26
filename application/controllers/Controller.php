@@ -43,13 +43,13 @@ class Controller extends CI_Controller
 
         //$this->load->model('check');
         //$maxNumberOfSlots = $this->student->getMaxNumberOfSlots();
-        //$data['events'] = $this->getEvents();
+        $data['items'] = $this->getAllItems();
         //$data['questionSets'] = $this->getQuestionSets();
 
         //$data['errorMessage'] = null;
 
         //$this->load->view('header');
-        $this->load->view('anon_homepage');//, $data); // $this->load->view('home', $data); set to this if data is set
+        $this->load->view('anon_homepage',$data);//, $data); // $this->load->view('home', $data); set to this if data is set
         //$this->load->view('footer');
     }
     
@@ -57,5 +57,10 @@ class Controller extends CI_Controller
     {
         //login stuff
         $this->load->view('login');
+    }
+    
+     public function getAllItems(){
+        $data = $this->users->queryAllItems();
+        return $data;
     }
 }

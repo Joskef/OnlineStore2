@@ -1,6 +1,6 @@
 <?php
 
-class survey_model extends CI_Model
+class users extends CI_Model
 {
     function __construct()
     {
