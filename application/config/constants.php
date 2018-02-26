@@ -100,13 +100,18 @@ define("COLUMN_USER_PASSWORD", "password");
 define("COLUMN_USER_TYPE", "user_type");
 define("COLUMN_FIRST_NAME", "First_name");
 define("COLUMN_LAST_NAME", "Last_name");
-define("COLUMN_Address", "Address");
+define("COLUMN_ADDRESS", "Address");
 define("COLUMN_CC", "cc");
 define("COLUMN_EMAIL", "email");
 define("COLUMN_SHIPPING_ADDRESS", "shippingaddress");
 define("COLUMN_SECRET_QUESTION", "secretquestion");
 
-
-
+/*Item COLUMNS*/
+define("COLUMN_ITEM_ID", "item_id");
+define("COLUMN_ITEM_NAME", "Name");
+define("COLUMN_ITEM_CATEGORY", "category");
+define("COLUMN_ITEM_PRICE", "price");
+define("COLUMN_ITEM_QTY", "qty");
+define("COLUMN_ITEM_DESC", "desc");
 
 
