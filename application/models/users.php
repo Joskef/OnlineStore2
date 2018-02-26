@@ -18,7 +18,7 @@ class users extends CI_Model
 
     function queryAllItems(){
         $this->db->select('*');
-        $this->db->from(items);
+        $this->db->from(TABLE_ITEM);
         $this->db->order_by(item_id);
         $query = $this->db->get();
         return $query->result();
