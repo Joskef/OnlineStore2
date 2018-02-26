@@ -64,7 +64,7 @@ CREATE TABLE `items` (
 
 LOCK TABLES `items` WRITE;
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT INTO `items` VALUES (1,'11','lol3','1001','11','lol1');
+INSERT INTO `items` VALUES (1,'1','iPhone S6','1000','100','It\'s a phone'),(2,'1','iPhone S7','1000','100','It\'s another phone'),(3,'1','iPhone S8','1000','100','It\'s another phone again');
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-26 20:26:20
+-- Dump completed on 2018-02-26 22:52:43
