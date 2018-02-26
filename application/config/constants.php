@@ -91,6 +91,8 @@ define("TABLE_ITEM", "items");
 define("TABLE_CATEGORY","category");
 define("TABLE_USER_TYPE", "user_type");
 
+/*end TABLES/
+
 /*User COLUMNS*/
 define("COLUMN_USER_ID", "user_id");
 define("COLUMN_USER_USERNAME", "username");
@@ -107,4 +109,4 @@ define("COLUMN_SECRET_QUESTION", "secretquestion");
 
 
 
-/*end TABLES/
+
