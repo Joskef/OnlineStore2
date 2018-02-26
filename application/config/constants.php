@@ -83,3 +83,28 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+/*TABLES*/
+
+define("TABLE_USER", "user");
+define("TABLE_ITEM", "items");
+define("TABLE_CATEGORY","category");
+define("TABLE_USER_TYPE", "user_type");
+
+/*User COLUMNS*/
+define("COLUMN_USER_ID", "user_id");
+define("COLUMN_USER_USERNAME", "username");
+define("COLUMN_USER_PASSWORD", "password");
+define("COLUMN_USER_TYPE", "user_type");
+define("COLUMN_FIRST_NAME", "First_name");
+define("COLUMN_LAST_NAME", "Last_name");
+define("COLUMN_Address", "Address");
+define("COLUMN_CC", "cc");
+define("COLUMN_EMAIL", "email");
+define("COLUMN_SHIPPING_ADDRESS", "shippingaddress");
+define("COLUMN_SECRET_QUESTION", "secretquestion");
+
+
+
+
+/*end TABLES/
