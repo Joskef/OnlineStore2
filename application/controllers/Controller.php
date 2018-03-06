@@ -58,7 +58,13 @@ class Controller extends CI_Controller
         //login stuff
         $this->load->view('login');
     }
-    
+
+    public function register()
+    {
+        //login stuff
+        $this->load->view('register');
+    }
+
      public function getAllItems(){
         $data = $this->users->queryAllItems();
         return $data;

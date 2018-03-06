@@ -24,7 +24,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="anon_homepage.html">GES</a>
+        <a class="navbar-brand" href="<?php echo base_url() ?>">GES</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,10 +37,11 @@
                 </button>
             </form>
             <li class="nav-item" id="Login">
-              <a class="nav-link" href="login.html">Login</a>
+              <a class="nav-link" href="<?php echo base_url() ?>login">Login</a>
+<!--                FIXME: @Dante not sure if this is the correct way to do this^^^-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="register.html">Sign Up</a>
+              <a class="nav-link" href="<?php echo base_url() ?>register">Sign Up</a>
             </li>
           </ul>
         </div>
