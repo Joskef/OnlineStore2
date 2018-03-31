@@ -145,26 +145,36 @@ class Controller extends CI_Controller
 
 
 
+
+
         if($this->users->isExistingUsername($getData[COLUMN_USER_USERNAME])){
             $data = array(
                 'status' => 'fail',
                 'message' => 'The Name ' .$getData[COLUMN_USER_USERNAME].' is already taken!'
             );
             echo json_encode($data);
-        }if($this->users->isExistingEmail($getData[COLUMN_EMAIL])){
+        }else if($this->users->isExistingEmail($getData[COLUMN_EMAIL])){
             $data = array(
                 'status' => 'fail',
                 'message' => 'The Email ' .$getData[COLUMN_EMAIL].' is already taken!'
             );
             echo json_encode($data);
+
         }else{
             $this->users->insertUser($getData);
+
+            $this->setSession($this->users->queryUserAccount($getData[COLUMN_USER_USERNAME]));
+
             $data = array(
                 'status' => 'success',
                 'message' => 'Successfully added '.$getData[COLUMN_USER_USERNAME].'!'
             );
+            chrome_log($data);
             echo json_encode($data);
         }
+
+
+
 
 
 

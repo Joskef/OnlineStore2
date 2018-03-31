@@ -28,7 +28,6 @@
           function signUp() {
               var output=true;
 
-              /*
               if($('#fName').val()==null||$('#fName').val()=="") {
                   alert("First Name is Blank.");
                   output = false;
@@ -87,7 +86,7 @@
               if(output==false){
                   return;
               }
-*/
+
 
 
 
@@ -115,6 +114,7 @@
 
                       if(result['status']=='success'){
                           alert(result['message']);
+                          window.location.href = '<?=base_url()?>';
                       }
                       else{
                           alert(result['message']);
