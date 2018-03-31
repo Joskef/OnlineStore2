@@ -56,7 +56,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['main'] = 'Controller/home';
 
 // ROUTES FOR INDIVIDUAL PAGES
-$route['login'] = 'Controller/login';
-$route['register'] = 'Controller/register';
+//$route['login'] = 'Controller/login';
+//$route['register'] = 'Controller/register';
 
 $route['page/(:any)'] = 'Controller/openPage/$1';
+
+$route['action/(:any)'] = 'Controller/doAction/$1';

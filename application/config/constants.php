@@ -115,3 +115,13 @@ define("COLUMN_ITEM_QTY", "qty");
 define("COLUMN_ITEM_DESC", "desc");
 
 
+/*ACTIONS*/
+define("USER_LOGOUT","user_logout");
+define("USER_LOGIN","user_login");
+
+/*PAGES*/
+define("PAGE_LOGIN","page_login");
+define("PAGE_REGISTER","page_register");
+
+
+

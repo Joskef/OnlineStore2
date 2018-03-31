@@ -24,7 +24,7 @@ class users extends CI_Model
         return $query->result();
     }
 
-    function insertUsers ($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd, $shippingaddress, $secretquestion)
+    function insertUser($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd, $shippingaddress, $secretquestion)
     {    $insertUserData=array(
             COLUMN_USER_TYPE => intval($user_set),
             COLUMN_USER_USERNAME => $user_name,
@@ -65,6 +65,34 @@ class users extends CI_Model
 	function deleteItems($id) {
 		$this->db->where(COLUMN_ITEM_ID, $id);
         $this->db->delete(items);
-	}
+    }
+
+    function isValidUser($name, $pass) {
+        $this->db->select("*");
+        $this->db->from(TABLE_USER);
+        $this->db->where(COLUMN_USER_USERNAME, $name);
+        $this->db->where(COLUMN_USER_PASSWORD, $pass);
+        $query = $this->db->get();
+        return count($query->result())>=1;
+    }
+
+    function queryUserAccount($name) {
+        $this->db->select("*");
+        $this->db->from(TABLE_USER);
+        $this->db->where(COLUMN_USER_USERNAME, $name);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
+    function updateUserPassword($id,$password){
+        $this->db->where(COLUMN_USER_ID, $id);
+        $this->db->update(COLUMN_USER_PASSWORD, $password);
+    }
+
+    function updateUserEmail($id,$email){
+        $this->db->where(COLUMN_USER_ID, $id);
+        $this->db->update(COLUMN_USER_PASSWORD, $email);
+    }
+
 }
 ?>
