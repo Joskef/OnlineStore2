@@ -8,15 +8,129 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Navigation bar</title>
+    <title>Register</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?=base_url()?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   !-- Custom styles for this template -->
+    <link href="<?=base_url()?>assets/css/register.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="<?=base_url()?>/assets/css/register.css" rel="stylesheet">
-    <link href="<?=base_url()?>/assets/fonts/css/fontawesome-all.min.css" rel="stylesheet">
 
+
+      <script>
+
+          $(document).on('ready', function(){
+              $('#.datepicker').datepicker({
+                  format: 'mm/dd/yyyy',
+                  startDate: '0d'
+              });
+          });
+
+
+          function signUp() {
+              var output=true;
+
+              /*
+              if($('#fName').val()==null||$('#fName').val()=="") {
+                  alert("First Name is Blank.");
+                  output = false;
+              }
+              else if($('#lName').val()==null||$('#lName').val()=="")
+              {
+                  alert("Last Name is Blank.");
+                  output = false;
+              }
+              else if($('#address').val()==null||$('#address').val()=="")
+              {
+                  alert("Address is Blank.");
+                  output = false;
+              }
+              else if($('#username').val()==null||$('#username').val()=="")
+              {
+                  alert("Username is Blank.");
+                  output = false;
+              }
+              else if($('#email').val()==null||$('#email').val()=="")
+              {
+                  alert("Email is Blank.");
+                  output = false;
+              }
+              else if($('#password').val()==null||$('#password').val()=="")
+              {
+                  alert("Password is Blank.");
+                  output = false;
+              }
+              else if($('#password').val()!=$('#password2').val())
+              {
+                  alert("Password is not Confirmed.");
+                  output = false;
+              }
+              else if($('#shipAddress').val()==null||$('#shipAddress').val()=="")
+              {
+                  alert("Ship Address is Blank.");
+                  output = false;
+              }
+              else if($('#secretQuestion').val()==null||$('#secretQuestion').val()=="")
+              {
+                  alert("Secret Question is Blank.");
+                  output = false;
+              }
+              else if($('#secretAnswer').val()==null||$('#secretAnswer').val()=="")
+              {
+                  alert("First Name is Blank.");
+                  output = false;
+              }
+              else if($('#secretAnswer2').val()!=$('#secretAnswer').val())
+              {
+                  alert("Answer is not Confirmed.");
+                  output = false;
+              }
+
+              if(output==false){
+                  return;
+              }
+*/
+
+
+
+
+
+              $.ajax({
+                  url: '<?php echo base_url('action/' . USER_REGISTER) ?>',
+                  type: 'post',
+                  dataType: 'json',
+                  data: {
+                        <?=COLUMN_FIRST_NAME?>:  $('#fName').val(),
+                        <?=COLUMN_LAST_NAME?>: $('#lName').val(),
+                        <?=COLUMN_ADDRESS?>: $('#address').val(),
+                        <?=COLUMN_CC?>: $('#cc').val(),
+                        <?=COLUMN_EMAIL?>: $('#email').val(),
+                        <?=COLUMN_USER_USERNAME?>: $('#username').val(),
+                        <?=COLUMN_USER_PASSWORD?>:$('#password').val(),
+                        <?=COLUMN_SHIPPING_ADDRESS?>:$('#shipAddress').val(),
+                        <?=COLUMN_SECRET_QUESTION?>:$('#secretQuestion').val(),
+                        <?=COLUMN_SECRET_ANSWER?>:$('#secretAnswer').val()
+
+                  }
+              })
+                  .done(function (result) {
+
+                      if(result['status']=='success'){
+                          alert(result['message']);
+                      }
+                      else{
+                          alert(result['message']);
+                      }
+                  })
+                  .fail(function () {
+                      console.log("fail");
+                  })
+                  .always(function () {
+                      console.log("complete");
+                  });
+
+
+          }
+
+      </script>
   </head>
   <body>
 
@@ -26,77 +140,94 @@
         <br>
         <div class="col-sm-12">
         <div class="row">
-            <form>
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-4 form-group">
                            <label>First Name</label>
-                                <input type="text" placeholder="Enter First Name Here.." class="form-control">
+                            <input type="text" placeholder="Enter First Name Here.." id="fName" class="form-control">
                         </div>
                         <div class="col-sm-4 form-group">
                         <label>Last Name</label>
-                            <input type="text" placeholder="Enter Last Name Here.." class="form-control">
-                        </div>
-                        <div class="col-sm-2 form-group">
-                        <label>M.I.</label>
-                            <input type="text" placeholder="Enter M.I." class="form-control">
+                            <input type="text" placeholder="Enter Last Name Here.." id="lName" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-8 form-group">
-                            <label>E-mail Address</label>
-                                <input type="text" placeholder="Enter City Name Here.." class="form-control">
+                            <label>Address</label>
+                                <input type="text" placeholder="Enter Address Here.." id="address" class="form-control">
                         </div>
                         <div class="col-sm-8 form-group">
                             <label>Credit Card Number</label>
-                                <input type="text" placeholder="Enter State Name Here.." class="form-control">
+                                <input type="text" placeholder="Enter Credit Card Number Here... (Optional)" id="cc" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-8 form-group">
                             <label>Email Address</label>
-                                <input type="text" placeholder="Enter Email Address Here.." class="form-control">
+                                <input type="text" placeholder="Enter Email Address Here.." id="email" class="form-control">
                         </div>
                     </div>
+                    <!--
                     <div class="row">
                         <div class="col-sm-6">
                             <label>Date of Birth</label>
+                            <input type="text"  placeholder="Click to Pick Date" class="form-control datepicker" data-provide="datepicker" id="birthday">
+                        </div>
+                    </div>
+
+                    -->
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <label>Username</label>
+                            <input type="text" placeholder="Enter Username" id="username"  class="form-control"></text>
                         </div>
                     </div>
                     <div class="row">
-                            <div class="col-sm-3 form-group">
-                                <input type="text" placeholder="Month" class="form-control">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" placeholder="Day" class="form-control">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" placeholder="Year" class="form-control">
-                            </div>
+                        <div class="col-sm-12 form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="Enter Password" id="password" class="form-control"></text>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" placeholder="Re-Enter Password" id="password2" class="form-control"></text>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
                             <label>Shipping Address</label>
-                                <input type="text" placeholder="Enter Shipping Address Here.."  class="form-control"></text>
+                                <input type="text" placeholder="Enter Shipping Address Here.." id="shipAddress"  class="form-control"></text>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
                             <label>Secret Question</label>
-                                <input type="text" placeholder="Enter Shipping Address Here.." class="form-control"></text>
+                                <input type="text" placeholder="Enter Secret Question" id="secretQuestion" class="form-control"></text>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-lg btn-info" id="btnSubmit">Submit</button>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <label>Answer to Question</label>
+                            <input type="password" placeholder="Enter Answer to Question" id="secretAnswer" class="form-control"></text>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <label>Confirm Answer</label>
+                            <input type="password" placeholder="Re-Enter Answer to Question" id="secretAnswer2" class="form-control"></text>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-info" id="btnSubmit" onclick="signUp()">Submit</button>
                 </div>
-            </form>
         </div>
         </div>
     </div>
       
     <!-- Bootstrap core JavaScript -->
-    <script src="<?=base_url()?>/jquery/jquery.min.js"></script>
-    <script src="<?=base_url()?>/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="<?=base_url()?>assets/jquery/jquery.min.js"></script>
+    <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 
 </html>

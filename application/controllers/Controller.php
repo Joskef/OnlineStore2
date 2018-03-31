@@ -90,6 +90,7 @@ class Controller extends CI_Controller
         switch ($action) {
             case USER_LOGIN : $this->login(); break;
             case USER_LOGOUT : $this->logout(); break;
+            case USER_REGISTER : $this->register(); break;
             default : $this->home();
         }
     }
@@ -117,10 +118,56 @@ class Controller extends CI_Controller
         }
     }
 
+
+
     public function logout(){
         $this->session->sess_destroy();
         $this->session->unset_userdata('email');
         redirect(base_url());
+    }
+
+
+    public function register(){
+        $getData = array(
+            COLUMN_FIRST_NAME => $this->input->post(COLUMN_FIRST_NAME),
+            COLUMN_LAST_NAME => $this->input->post(COLUMN_LAST_NAME),
+            COLUMN_ADDRESS => $this->input->post(COLUMN_ADDRESS),
+            COLUMN_CC => $this->input->post(COLUMN_CC),
+            COLUMN_EMAIL => $this->input->post(COLUMN_EMAIL),
+            COLUMN_USER_USERNAME => $this->input->post(COLUMN_USER_USERNAME),
+            COLUMN_USER_PASSWORD => $this->input->post(COLUMN_USER_PASSWORD),
+            COLUMN_SHIPPING_ADDRESS => $this->input->post(COLUMN_SHIPPING_ADDRESS),
+            COLUMN_SECRET_QUESTION => $this->input->post(COLUMN_SECRET_QUESTION),
+            COLUMN_SECRET_ANSWER => $this->input->post(COLUMN_SECRET_ANSWER),
+            COLUMN_USER_TYPE => 1
+
+        );
+
+
+
+        if($this->users->isExistingUsername($getData[COLUMN_USER_USERNAME])){
+            $data = array(
+                'status' => 'fail',
+                'message' => 'The Name ' .$getData[COLUMN_USER_USERNAME].' is already taken!'
+            );
+            echo json_encode($data);
+        }if($this->users->isExistingEmail($getData[COLUMN_EMAIL])){
+            $data = array(
+                'status' => 'fail',
+                'message' => 'The Email ' .$getData[COLUMN_EMAIL].' is already taken!'
+            );
+            echo json_encode($data);
+        }else{
+            $this->users->insertUser($getData);
+            $data = array(
+                'status' => 'success',
+                'message' => 'Successfully added '.$getData[COLUMN_USER_USERNAME].'!'
+            );
+            echo json_encode($data);
+        }
+
+
+
     }
 
      public function getAllItems(){
@@ -128,7 +175,4 @@ class Controller extends CI_Controller
         return $data;
     }
 
-    public function addNewUser(){
-        
-    }
 }

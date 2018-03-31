@@ -24,21 +24,26 @@ class users extends CI_Model
         return $query->result();
     }
 
-    function insertUser($user_set,$user_name,$password,$first, $last, $address, $ccno, $emailadd, $shippingaddress, $secretquestion)
-    {    $insertUserData=array(
-            COLUMN_USER_TYPE => intval($user_set),
-            COLUMN_USER_USERNAME => $user_name,
-            COLUMN_USER_PASSWORD => $password,
-            COLUMN_FIRST_NAME => $first,
-			COLUMN_LAST_NAME => $last,
-			COLUMN_ADDRESS => $address,
-			COLUMN_CC => intval($ccno),
-			COLUMN_EMAIL => $emailadd,
-			COLUMN_SHIPPING_ADDRESS => $shippingaddress,
-			COLUMN_SECRET_QUESTION => $secretquestion
+    function insertUser($user)
+    {
+
+        chrome_log("RES");
+
+        $insertUserData=array(
+            COLUMN_USER_TYPE => intval($user[COLUMN_USER_TYPE]),
+            COLUMN_USER_USERNAME => $user[COLUMN_USER_USERNAME],
+            COLUMN_USER_PASSWORD => $user[COLUMN_USER_PASSWORD],
+            COLUMN_FIRST_NAME => $user[COLUMN_FIRST_NAME],
+            COLUMN_LAST_NAME => $user[COLUMN_LAST_NAME],
+            COLUMN_ADDRESS => $user[COLUMN_ADDRESS],
+            COLUMN_CC => intval($user[COLUMN_CC]),
+            COLUMN_EMAIL => $user[COLUMN_EMAIL],
+            COLUMN_SHIPPING_ADDRESS => $user[COLUMN_SHIPPING_ADDRESS],
+            COLUMN_SECRET_QUESTION => $user[COLUMN_SECRET_QUESTION]
         );
-			
-        $this->db->insert(user, $insertUserData);
+
+        chrome_log($insertUserData);
+        $this->db->insert(TABLE_USER, $insertUserData);
 
     }
 	
@@ -72,6 +77,22 @@ class users extends CI_Model
         $this->db->from(TABLE_USER);
         $this->db->where(COLUMN_USER_USERNAME, $name);
         $this->db->where(COLUMN_USER_PASSWORD, $pass);
+        $query = $this->db->get();
+        return count($query->result())>=1;
+    }
+
+    function isExistingUsername($name) {
+        $this->db->select("*");
+        $this->db->from(TABLE_USER);
+        $this->db->where(COLUMN_USER_USERNAME, $name);
+        $query = $this->db->get();
+        return count($query->result())>=1;
+    }
+
+    function isExistingEmail($email) {
+        $this->db->select("*");
+        $this->db->from(TABLE_USER);
+        $this->db->where(COLUMN_EMAIL, $email);
         $query = $this->db->get();
         return count($query->result())>=1;
     }

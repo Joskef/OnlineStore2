@@ -105,6 +105,7 @@ define("COLUMN_CC", "cc");
 define("COLUMN_EMAIL", "email");
 define("COLUMN_SHIPPING_ADDRESS", "shippingaddress");
 define("COLUMN_SECRET_QUESTION", "secretquestion");
+define("COLUMN_SECRET_ANSWER", "secretanswer");
 
 /*Item COLUMNS*/
 define("COLUMN_ITEM_ID", "item_id");
@@ -118,6 +119,7 @@ define("COLUMN_ITEM_DESC", "desc");
 /*ACTIONS*/
 define("USER_LOGOUT","user_logout");
 define("USER_LOGIN","user_login");
+define("USER_REGISTER","user_register");
 
 /*PAGES*/
 define("PAGE_LOGIN","page_login");
