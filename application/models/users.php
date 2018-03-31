@@ -39,7 +39,8 @@ class users extends CI_Model
             COLUMN_CC => intval($user[COLUMN_CC]),
             COLUMN_EMAIL => $user[COLUMN_EMAIL],
             COLUMN_SHIPPING_ADDRESS => $user[COLUMN_SHIPPING_ADDRESS],
-            COLUMN_SECRET_QUESTION => $user[COLUMN_SECRET_QUESTION]
+            COLUMN_SECRET_QUESTION => $user[COLUMN_SECRET_QUESTION],
+            COLUMN_SECRET_ANSWER => $user[COLUMN_SECRET_ANSWER]
         );
 
         chrome_log($insertUserData);
