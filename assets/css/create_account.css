@@ -1,0 +1,84 @@
+
+/* nav bar */
+html {
+  overflow-y: scroll;
+}
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+
+.container{
+    color: black;
+  }
+    
+ nav{
+    background-color: #800000;
+ }
+ 
+ a{
+    color: #800000;  
+ }
+     
+ a:hover{
+    color: grey;  
+ }
+    
+.container input[type=text] {
+    padding: 5px;
+    border: none;
+    font-size: 18px;
+ }
+    
+#searchBtn{
+  float: right;
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+   
+#searchForm {
+    margin-right: 111px;
+ }
+
+
+.navbar-brand{
+    font-size: 25px;
+    font-style: italic;
+    font-family: serif;
+}
+.navbar-nav{
+   font-size: 18px;
+}
+
+.dropdown {
+    color: moccasin;
+    margin-top: 5px;
+}
+
+.dropdown-menu{
+    padding-left: 15px;  
+}
+    
+#createContainer {
+    max-width: 730px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    background-color: #eee;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+h2{
+    margin-bottom: 15px;
+}
+#btnSubmit{
+    background-color: #800000;  
+    margin-top: 20px;
+}
+}

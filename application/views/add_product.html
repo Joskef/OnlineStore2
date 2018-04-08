@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Navigation bar</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/add_product.css" rel="stylesheet">
+    <link href="fonts/css/fontawesome-all.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+       
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="homepage.html">GES</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <form id="searchForm">
+                <input type="text" placeholder="Search for Products..." name="searchInput" size="92">
+                <button type="submit" id="searchBtn">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+            <div class="dropdown">
+                <li class="dropdown-toggle">
+                  <a data-toggle="dropdown">Stock<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="product_list.html">Product List</a></li>
+                      <li><a href="../ANONYMOUS/homepage.html">Log Out</a></li>
+                  </ul>
+                </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+ <div class="container" id="createContainer">
+    <h2>Add A Product/Item</h2>
+    <br>
+	<div class="col-sm-12">
+	<div class="row">
+        <form>
+            <div class="col-sm-12">
+				<div class="row">
+				    <div class="col-sm-8 form-group">
+				       <label>Name</label>
+				            <input type="text" placeholder="iPhone 5S" class="form-control">
+				    </div>
+				    <div class="col-sm-3 form-group">
+				    <label>Quantity</label>
+				        <input type="number" class="form-control text-center" value="1">
+				    </div>
+				</div>					
+				<div class="row">
+				    <div class="col-sm-12 form-group">
+				        <label>Description</label>
+				            <input type="text" placeholder="Description" class="form-control">
+				    </div>	
+				</div>								
+				<div class="row">
+                    <div class="col-sm-8 form-group">
+                        <label>Price</label>
+                            <input type="text" placeholder="$24.99" class="form-control">
+                    </div>
+				</div>	
+				<button type="submit" class="btn btn-lg btn-info" id="btnSubmit">Submit</button>					
+            </div>
+        </form> 
+    </div>
+	</div>
+</div>
+      
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
