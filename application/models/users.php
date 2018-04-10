@@ -24,6 +24,15 @@ class users extends CI_Model
         return $query->result();
     }
 
+    function searchItems($searchQuery){
+        $this->db->select('*');
+        $this->db->from(TABLE_ITEM);
+        $this->db->where(COLUMN_ITEM_NAME,$searchQuery);
+        $this->db->order_by(COLUMN_ITEM_ID);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function insertUser($user)
     {
 

@@ -239,4 +239,8 @@ class Controller extends CI_Controller
 
     }
 
+    public function searchItems($searchQuery){
+        $data = $this->users->querySomeItems($searchQuery);
+        return $data;
+    }
 }
