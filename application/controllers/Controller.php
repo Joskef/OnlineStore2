@@ -27,6 +27,8 @@ class Controller extends CI_Controller
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
 
+
+
     public function __construct() {
         parent::__construct();
         $this->load->library('session');
@@ -106,10 +108,20 @@ class Controller extends CI_Controller
         $p = $_POST["password"];
 
 
-        if ($this->users->isValidUser($n,$p)) {
+        if ($this->users->isExistingUsername($n)) {
+
             $user = $this->users->queryUserAccount($n);
-            $this->setSession($user);
-            redirect(base_url());
+
+            if($this->decryptString($p,$user[COLUMN_USER_PASSWORD]))
+            {
+                $this->setSession($user);
+                redirect(base_url());
+
+            }else{
+                $errorMessage = "Invalid username or password.";
+                $this->loginPage($errorMessage);
+            }
+
 
         }
         else {
@@ -135,10 +147,10 @@ class Controller extends CI_Controller
             COLUMN_CC => $this->input->post(COLUMN_CC),
             COLUMN_EMAIL => $this->input->post(COLUMN_EMAIL),
             COLUMN_USER_USERNAME => $this->input->post(COLUMN_USER_USERNAME),
-            COLUMN_USER_PASSWORD => $this->input->post(COLUMN_USER_PASSWORD),
+            COLUMN_USER_PASSWORD => $this->encryptString($this->input->post(COLUMN_USER_PASSWORD)),
             COLUMN_SHIPPING_ADDRESS => $this->input->post(COLUMN_SHIPPING_ADDRESS),
             COLUMN_SECRET_QUESTION => $this->input->post(COLUMN_SECRET_QUESTION),
-            COLUMN_SECRET_ANSWER => $this->input->post(COLUMN_SECRET_ANSWER),
+            COLUMN_SECRET_ANSWER => $this->encryptString($this->input->post(COLUMN_SECRET_ANSWER)),
             COLUMN_USER_TYPE => 1
 
         );
@@ -183,6 +195,18 @@ class Controller extends CI_Controller
      public function getAllItems(){
         $data = $this->users->queryAllItems();
         return $data;
+    }
+
+    public function encryptString($input){
+        $salt = "secure_salt";
+
+        return password_hash($input.$salt, PASSWORD_DEFAULT);
+    }
+
+    public function decryptString($input,$hash){
+        $salt = "secure_salt";
+        return(password_verify($input.$salt, $hash));
+
     }
 
 }

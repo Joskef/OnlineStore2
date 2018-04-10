@@ -73,14 +73,6 @@ class users extends CI_Model
         $this->db->delete(items);
     }
 
-    function isValidUser($name, $pass) {
-        $this->db->select("*");
-        $this->db->from(TABLE_USER);
-        $this->db->where(COLUMN_USER_USERNAME, $name);
-        $this->db->where(COLUMN_USER_PASSWORD, $pass);
-        $query = $this->db->get();
-        return count($query->result())>=1;
-    }
 
     function isExistingUsername($name) {
         $this->db->select("*");
