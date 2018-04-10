@@ -5,6 +5,8 @@
 
     <body>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
     <div class="wrapper">
         <form class="form-signin" method="POST" action="<?=base_url()?>action/<?php echo USER_LOGIN?>">
@@ -17,7 +19,9 @@
           <a href="#">Forgot your password?</a>
             <br>
 
-          <button class="btn btn-lg btn-primary btn-block" type="submit"id="loginBtn">Login</button>
+                <div class="g-recaptcha" data-sitekey="6LdcS1IUAAAAAAv-k4AUizWqw1hdzNK9gA2tavDG"></div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit"id="loginBtn">Login</button>
 
 
         </form>
@@ -26,7 +30,8 @@
     <!-- Bootstrap core JavaScript -->
     <script src="<?=base_url()?>/assets/jquery/jquery.min.js"></script>
     <script src="<?=base_url()?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async defer>
   </body>
 
 </html>

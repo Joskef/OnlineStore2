@@ -12,7 +12,6 @@
 
    !-- Custom styles for this template -->
     <link href="<?=base_url()?>assets/css/register.css" rel="stylesheet">
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
 

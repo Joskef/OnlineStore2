@@ -108,6 +108,22 @@ class Controller extends CI_Controller
         $p = $_POST["password"];
 
 
+
+        $captcha = "";
+            $captcha = $_POST["g-recaptcha-response"];
+            // handling the captcha and checking if it's ok
+            $secret = "6LdcS1IUAAAAAH8PrYpOf5n-ZGRLsmOUrODOhshI";
+            $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha."&remoteip=".$_SERVER["REMOTE_ADDR"]), true);
+
+            // if the captcha is cleared with google, send the mail and echo ok.
+            if ($response["success"] == false){
+                $errorMessage = "Captcha Failed.";
+                $this->loginPage($errorMessage);
+            }else
+
+
+
+
         if ($this->users->isExistingUsername($n)) {
 
             $user = $this->users->queryUserAccount($n);
