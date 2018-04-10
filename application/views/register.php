@@ -12,16 +12,25 @@
 
    !-- Custom styles for this template -->
     <link href="<?=base_url()?>assets/css/register.css" rel="stylesheet">
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 
 
       <script>
+
+          var onloadCallback = function() {
+              grecaptcha.render('captcha', {
+                  'sitekey' : '6LdcS1IUAAAAAAv-k4AUizWqw1hdzNK9gA2tavDG'
+              });
+          };
 
           $(document).on('ready', function(){
               $('#.datepicker').datepicker({
                   format: 'mm/dd/yyyy',
                   startDate: '0d'
               });
+
           });
 
 
@@ -82,6 +91,11 @@
                   alert("Answer is not Confirmed.");
                   output = false;
               }
+              if(grecaptcha.getResponse()=="")
+              {
+                  alert("Captcha not Checked.");
+                  output = false;
+              }
 
               if(output==false){
                   return;
@@ -106,7 +120,9 @@
                         <?=COLUMN_USER_PASSWORD?>:$('#password').val(),
                         <?=COLUMN_SHIPPING_ADDRESS?>:$('#shipAddress').val(),
                         <?=COLUMN_SECRET_QUESTION?>:$('#secretQuestion').val(),
-                        <?=COLUMN_SECRET_ANSWER?>:$('#secretAnswer').val()
+                        <?=COLUMN_SECRET_ANSWER?>:$('#secretAnswer').val(),
+                        'captcha': grecaptcha.getResponse()
+
 
                   }
               })
@@ -119,12 +135,15 @@
                       else{
                           alert(result['message']);
                       }
+                      grecaptcha.reset();
                   })
                   .fail(function () {
                       console.log("fail");
+                      grecaptcha.reset();
                   })
                   .always(function () {
                       console.log("complete");
+                      grecaptcha.reset();
                   });
 
 
@@ -219,6 +238,8 @@
                             <input type="password" placeholder="Re-Enter Answer to Question" id="secretAnswer2" class="form-control"></text>
                         </div>
                     </div>
+                    <div id="captcha"></div>
+
                     <button type="submit" class="btn btn-lg btn-info" id="btnSubmit" onclick="signUp()">Submit</button>
                 </div>
         </div>
@@ -226,6 +247,9 @@
     </div>
       
     <!-- Bootstrap core JavaScript -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async defer>
+    </script>
     <script src="<?=base_url()?>assets/jquery/jquery.min.js"></script>
     <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>

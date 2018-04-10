@@ -156,6 +156,20 @@ class Controller extends CI_Controller
         );
 
 
+        $captcha = $this->input->post('captcha');
+
+        // handling the captcha and checking if it's ok
+        $secret = "6LdcS1IUAAAAAH8PrYpOf5n-ZGRLsmOUrODOhshI";
+        $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha."&remoteip=".$_SERVER["REMOTE_ADDR"]), true);
+
+        // if the captcha is cleared with google, send the mail and echo ok.
+        if ($response["success"] == false){
+            $data = array(
+                'status' => 'fail',
+                'message' => 'Captcha is incorrect!'
+            );
+            echo json_encode($data);
+        }else
 
 
 
