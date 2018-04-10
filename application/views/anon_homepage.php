@@ -35,13 +35,13 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="d-block img-fluid" height="900" width="900" src="assets/images/sale.jpg" alt="First slide">
+                <img class="d-block img-fluid" height="900" width="900" src="<?=base_url()?>assets/images/sale.jpg" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="assets/images/sale.jpg" alt="Second slide">
+                <img class="d-block img-fluid" src="<?=base_url()?>assets/images/sale.jpg" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid" src="assets/images/sale.jpg" alt="Third slide">
+                <img class="d-block img-fluid" src="<?=base_url()?>assets/images/sale.jpg" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -61,7 +61,7 @@
               <?php $item = json_decode(json_encode($item),true)?>
                     <div class="col-lg-4 col-md-6 mb-4">
                       <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="assets/images/iphone.jpg" alt=""></a>
+                        <a href="#"><img class="card-img-top" src="<?=base_url()?>assets/images/iphone.jpg" alt=""></a>
                         <hr>
                         <div class="card-body">
                           <h4 class="card-title">

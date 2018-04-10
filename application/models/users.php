@@ -27,7 +27,7 @@ class users extends CI_Model
     function searchItems($searchQuery){
         $this->db->select('*');
         $this->db->from(TABLE_ITEM);
-        $this->db->where(COLUMN_ITEM_NAME,$searchQuery);
+        $this->db->like(COLUMN_ITEM_NAME,$searchQuery, 'both');
         $this->db->order_by(COLUMN_ITEM_ID);
         $query = $this->db->get();
         return $query->result();

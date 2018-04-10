@@ -10,7 +10,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <form id="searchForm">
+                    <form id="searchForm" method="GET" action="<?=base_url()?>action/<?php echo USER_SEARCH_ITEM?>">
                         <input type="text" placeholder="Search for Products..." name="searchInput" size="92">
                         <button type="submit" id="searchBtn">
                             <i class="fa fa-search"></i>

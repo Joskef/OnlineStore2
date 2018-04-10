@@ -120,6 +120,7 @@ define("COLUMN_ITEM_DESC", "desc");
 define("USER_LOGOUT","user_logout");
 define("USER_LOGIN","user_login");
 define("USER_REGISTER","user_register");
+define("USER_SEARCH_ITEM","user_search_item");
 
 /*PAGES*/
 define("PAGE_LOGIN","page_login");

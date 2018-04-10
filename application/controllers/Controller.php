@@ -93,6 +93,7 @@ class Controller extends CI_Controller
             case USER_LOGIN : $this->login(); break;
             case USER_LOGOUT : $this->logout(); break;
             case USER_REGISTER : $this->register(); break;
+            case USER_SEARCH_ITEM : $this->searchItem(); break;
             default : $this->home();
         }
     }
@@ -239,8 +240,17 @@ class Controller extends CI_Controller
 
     }
 
+    public function searchItem(){
+        $query = $_GET['searchInput'];
+        $data['items'] = $this->searchItems($query);
+
+        $this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('anon_homepage',$data);
+    }
+
     public function searchItems($searchQuery){
-        $data = $this->users->querySomeItems($searchQuery);
+        $data = $this->users->searchItems($searchQuery);
         return $data;
     }
 }
