@@ -78,7 +78,7 @@ class users extends CI_Model
             COLUMN_SHOPPING_CART_ITEM_ID => intval($item_id),
             COLUMN_SHOPPING_CART_USER_ID => intval($user_id)
         );
-        $this->db->insert(shopping_cart);
+        $this->db->insert("TABLE_SHOPPING_CART", $insertItemShoppingCartData);
     }
 		
 	function deleteUsers($id) {
@@ -133,7 +133,7 @@ class users extends CI_Model
         $this->db->order_by(COLUMN_ITEM_ID);
 
         $query = $this->db->get();
-        
+
         return $query->result();
     }
 }
