@@ -90,6 +90,7 @@ define("TABLE_USER", "user");
 define("TABLE_ITEM", "items");
 define("TABLE_CATEGORY","category");
 define("TABLE_USER_TYPE", "user_type");
+define("TABLE_SHOPPING_CART", "shopping_cart");
 
 /*end TABLES/
 
@@ -114,6 +115,7 @@ define("COLUMN_ITEM_CATEGORY", "category");
 define("COLUMN_ITEM_PRICE", "price");
 define("COLUMN_ITEM_QTY", "qty");
 define("COLUMN_ITEM_DESC", "desc");
+define("COLUMN_ITEM_IMAGE_FILE", "imagefilepath");
 
 
 /*ACTIONS*/
@@ -125,6 +127,12 @@ define("USER_SEARCH_ITEM","user_search_item");
 /*PAGES*/
 define("PAGE_LOGIN","page_login");
 define("PAGE_REGISTER","page_register");
+
+/*Shopping_cart COLUMNS*/
+define("COLUMN_SHOPPING_CART_ID");
+define("COLUMN_SHOPPING_CART_USER_ID");
+define("COLUMN_SHOPPING_CART_ITEM_ID");
+define("COLUMN_SHOPPING_CART_IS_PURCHASED");
 
 
 

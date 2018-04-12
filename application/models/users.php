@@ -71,6 +71,15 @@ class users extends CI_Model
 		
 		
 	}
+
+	function insertItemShoppingCart($item_id, $user_id)
+    {
+        $insertItemShoppingCartData=array(
+            COLUMN_SHOPPING_CART_ITEM_ID => intval($item_id),
+            COLUMN_SHOPPING_CART_USER_ID => intval($user_id)
+        );
+        $this->db->insert(shopping_cart);
+    }
 		
 	function deleteUsers($id) {
         $this->db->where(COLUMN_USER_ID, $id);
@@ -117,5 +126,15 @@ class users extends CI_Model
         $this->db->update(COLUMN_USER_PASSWORD, $email);
     }
 
+    function searchCategory($category){
+        $this->db->select('*');
+        $this->db->from(TABLE_ITEM);
+        $this->db->where(COLUMN_ITEM_NAME, $category);
+        $this->db->order_by(COLUMN_ITEM_ID);
+
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
 }
 ?>
