@@ -44,6 +44,9 @@
 <!--                        <li class="nav-item" id="Cart">-->
 <!--                            <a class="nav-link" href="--><?php //echo base_url() ?><!--action/--><?php //echo SHOPPING_CART?><!--">Shopping Cart</a>-->
 <!--                        </li>-->
+                        <li class="nav-item" id="Cart">
+                            <a class="nav-link" href="<?php echo base_url() ?>page/<?php echo SHOPPING_CART?>">Shopping Cart</a>
+                        </li>
                         <li class="nav-item" id="Login">
                             <a class="nav-link" href="<?php echo base_url() ?>action/<?php echo USER_LOGOUT?>">Logout</a>
                         </li>
