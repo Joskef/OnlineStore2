@@ -64,6 +64,8 @@ class Controller extends CI_Controller
         switch ($action) {
             case PAGE_LOGIN : $this->loginPage(""); break;
             case PAGE_REGISTER : $this->registerPage(); break;
+            case PAGE_CATEGORY_ELECTRONICS : $this->categoryPage("electronics"); break;
+            case SHOP_ITEM : $this->shop_itemPage(); break;
             default : $this->home();
         }
     }
@@ -86,6 +88,29 @@ class Controller extends CI_Controller
         $this->load->view('header');
         $this->load->view('navbar');
         $this->load->view('register');
+    }
+
+    public function categoryPage($category)
+    {
+        //category stuff
+        $data['items'] = $this->searchCategory($category);
+
+        $this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('anon_homepage',$data);
+    }
+
+    public function searchCategory($searchQuery){
+        $data = $this->users->searchItems($searchQuery);
+        return $data;
+    }
+
+    public function shop_itemPage()
+    {
+        //item stuff
+        $this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('shop_item');
     }
 
     public function doAction($action){

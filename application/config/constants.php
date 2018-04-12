@@ -125,6 +125,8 @@ define("USER_SEARCH_ITEM","user_search_item");
 /*PAGES*/
 define("PAGE_LOGIN","page_login");
 define("PAGE_REGISTER","page_register");
+define("PAGE_CATEGORY_ELECTRONICS", "page_category_electronics");
+define("SHOP_ITEM", "shop_item");
 
 
 

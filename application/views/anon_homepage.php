@@ -14,7 +14,8 @@
 
           <h4 class="my-4">Categories</h4>
           <ul class="list-group">
-            <a href="#" class="list-group-item">Electronic Devices</a>
+            <a href="<?php echo base_url() ?>page/<?php echo PAGE_CATEGORY_ELECTRONICS?>" class="list-group-item">Electronic Devices</a>
+<!--              TODO: The rest of these-->
             <a href="#" class="list-group-item">Women's Fashion</a>
             <a href="#" class="list-group-item">Men's Fashion</a>
             <a href="#" class="list-group-item">Home Appliances</a>
@@ -61,11 +62,11 @@
               <?php $item = json_decode(json_encode($item),true)?>
                     <div class="col-lg-4 col-md-6 mb-4">
                       <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="<?=base_url()?>assets/images/iphone.jpg" alt=""></a>
+                        <a href="<?php echo base_url() ?>page/<?php echo SHOP_ITEM?>"><img class="card-img-top" src="<?=base_url()?>assets/images/iphone.jpg" alt=""></a>
                         <hr>
                         <div class="card-body">
                           <h4 class="card-title">
-                            <a href="#"><?= $item[COLUMN_ITEM_NAME]?></a>
+                            <a href="<?php echo base_url() ?>page/<?php echo SHOP_ITEM?>"><?= $item[COLUMN_ITEM_NAME]?></a>
                           </h4>
                           <h5>$<?= $item[COLUMN_ITEM_PRICE]?></h5>
                           <p class="card-text"><?= $item[COLUMN_ITEM_DESC]?></p>
