@@ -67,6 +67,9 @@ class Controller extends CI_Controller
             case PAGE_CATEGORY_ELECTRONICS : $this->categoryPage("electronics"); break;
             case PAGE_CATEGORY_PHONE : $this->categoryPage("phone"); break;
             case PAGE_CATEGORY_CLOTHING : $this->categoryPage("clothing"); break;
+            case SHOP_ITEM : $this->shop_itemPage(); break;
+            case PRODUCT_LIST : $this->product_listPage(); break;
+            case CREATE_ADMIN_ACCOUNT : $this->create_admin_accountPage(); break;
             default : $this->home();
         }
     }
@@ -107,6 +110,22 @@ class Controller extends CI_Controller
     }
 
 
+
+    public function product_listPage()
+    {
+        //product list stuff
+        $this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('product_list');
+    }
+
+    public function create_admin_accountPage()
+    {
+        //create admin account stuff stuff
+        $this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('create_admin_account');
+    }
 
     public function doAction($action){
         switch ($action) {

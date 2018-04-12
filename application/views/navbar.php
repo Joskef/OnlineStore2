@@ -17,15 +17,39 @@
                         </button>
                     </form>
 
+<!--                    ADMIN ACCOUNT-->
                     <?php if(isset($_SESSION['userType'])&&$_SESSION['userType'] == 1): ?>
+<!--                        <div class="dropdown">-->
+<!--                            <li class="dropdown-toggle">-->
+<!--                                <a data-toggle="dropdown">Admin<span class="caret"></span></a>-->
+<!--                                <ul class="dropdown-menu">-->
+                    <li class="nav-item" id="ProdList">
+                        <a class="nav-link" href="<?php echo base_url() ?>action/<?php echo PRODUCT_LIST?>">Product List</a>
+                    </li>
+<!--                    TODO: not working-->
+                        <li class="nav-item" id="CreateAdminAccount">
+                            <a class="nav-link" href="<?php echo base_url() ?>action/<?php echo CREATE_ADMIN_ACCOUNT?>">Create Account</a>
+                        </li>
+<!--                    TODO: ditto-->
+                                    <li class="nav-item" id="Login">
+                                        <a class="nav-link" href="<?php echo base_url() ?>action/<?php echo USER_LOGOUT?>">Logout</a>
+                                    </li>
+<!--                                </ul>-->
+<!--                            </li>-->
+<!--                        </div>-->
+<!--                    TODO: make dropdown work, make css work?-->
+<!--                    TODO: add other navbar stuff depending on usertype-->
+<!--                    GENERIC USER ACCOUNT-->
+                    <?php elseif(isset($_SESSION['userType'])&&$_SESSION['userType'] == 3): ?>
+<!--                        <li class="nav-item" id="Cart">-->
+<!--                            <a class="nav-link" href="--><?php //echo base_url() ?><!--action/--><?php //echo SHOPPING_CART?><!--">Shopping Cart</a>-->
+<!--                        </li>-->
                         <li class="nav-item" id="Login">
                             <a class="nav-link" href="<?php echo base_url() ?>action/<?php echo USER_LOGOUT?>">Logout</a>
-                            <!--                FIXME: @Dante not sure if this is the correct way to do this^^^-->
                         </li>
                     <?php else:?>
                         <li class="nav-item" id="Login">
                             <a class="nav-link" href="<?php echo base_url() ?>page/<?php echo PAGE_LOGIN?>">Login</a>
-                            <!--                FIXME: @Dante not sure if this is the correct way to do this^^^-->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url() ?>page/<?php echo PAGE_REGISTER?>">Sign Up</a>
