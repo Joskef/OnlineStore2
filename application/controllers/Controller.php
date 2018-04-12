@@ -68,6 +68,7 @@ class Controller extends CI_Controller
             case PAGE_CATEGORY_PHONE : $this->categoryPage("phone"); break;
             case PAGE_CATEGORY_CLOTHING : $this->categoryPage("clothing"); break;
             case SHOP_ITEM : $this->shop_itemPage(); break;
+            case SHOPPING_CART : $this->shopping_cartPage(); break;
             case PRODUCT_LIST : $this->product_listPage(); break;
             case CREATE_ADMIN_ACCOUNT : $this->create_admin_accountPage(); break;
             default : $this->home();
@@ -109,7 +110,13 @@ class Controller extends CI_Controller
         return $data;
     }
 
-
+    public function shopping_cartPage()
+    {
+        //cart stuff
+        $this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('shopping_cart');
+    }
 
     public function product_listPage()
     {
