@@ -91,6 +91,11 @@ class users extends CI_Model
         $this->db->delete(items);
     }
 
+    function deleteShoppingCartItem($id){
+        $this->db->where(COLUMN_SHOPPING_CART_ID);
+        $this->db->delete(shopping_cart);
+    }
+
 
     function isExistingUsername($name) {
         $this->db->select("*");
@@ -119,6 +124,16 @@ class users extends CI_Model
     function updateUserPassword($id,$password){
         $this->db->where(COLUMN_USER_ID, $id);
         $this->db->update(COLUMN_USER_PASSWORD, $password);
+    }
+
+    function updateItemShoppingCartPurchase($id,$ispurchased){
+        $this->db->where(COLUMN_SHOPPING_CART_USER_ID, $id);
+        $this->db->update(COLUMN_SHOPPING_CART_IS_PURCHASED, $ispurchased);
+    }
+
+    function updateItemShoppingCartQty($id,$qty){
+        $this->db->where(COLUMN_SHOPPING_CART_USER_ID, $id);
+        $this->db->update(COLUMN_SHOPPING_CART_IS_QUANTITY, $qty);
     }
 
     function updateUserEmail($id,$email){

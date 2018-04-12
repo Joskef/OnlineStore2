@@ -129,10 +129,11 @@ define("PAGE_LOGIN","page_login");
 define("PAGE_REGISTER","page_register");
 
 /*Shopping_cart COLUMNS*/
-define("COLUMN_SHOPPING_CART_ID");
-define("COLUMN_SHOPPING_CART_USER_ID");
-define("COLUMN_SHOPPING_CART_ITEM_ID");
-define("COLUMN_SHOPPING_CART_IS_PURCHASED");
+define("COLUMN_SHOPPING_CART_ID", "shopping_cart_id");
+define("COLUMN_SHOPPING_CART_USER_ID","user_id");
+define("COLUMN_SHOPPING_CART_ITEM_ID","item_id");
+define("COLUMN_SHOPPING_CART_QUANTITY","qty");
+define("COLUMN_SHOPPING_CART_IS_PURCHASED","is_purchased");
 
 
 
