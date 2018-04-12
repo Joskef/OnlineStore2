@@ -131,6 +131,8 @@ define("PAGE_CATEGORY_ELECTRONICS", "page_category_electronics");
 define("PAGE_CATEGORY_PHONE", "page_category_phone");
 define("PAGE_CATEGORY_CLOTHING", "page_category_clothing");
 define("SHOP_ITEM", "shop_item");
+define("PRODUCT_LIST", "product_list");
+define("CREATE_ADMIN_ACCOUNT", "create_admin_account");
 
 /*Shopping_cart COLUMNS*/
 define("COLUMN_SHOPPING_CART_ID", "shopping_cart_id");
