@@ -90,6 +90,7 @@ define("TABLE_USER", "user");
 define("TABLE_ITEM", "items");
 define("TABLE_CATEGORY","category");
 define("TABLE_USER_TYPE", "user_type");
+define("TABLE_SHOPPING_CART", "shopping_cart");
 
 /*end TABLES/
 
@@ -114,6 +115,7 @@ define("COLUMN_ITEM_CATEGORY", "category");
 define("COLUMN_ITEM_PRICE", "price");
 define("COLUMN_ITEM_QTY", "qty");
 define("COLUMN_ITEM_DESC", "desc");
+define("COLUMN_ITEM_IMAGE_FILE", "imagefilepath");
 
 
 /*ACTIONS*/
@@ -129,6 +131,13 @@ define("PAGE_CATEGORY_ELECTRONICS", "page_category_electronics");
 define("PAGE_CATEGORY_PHONE", "page_category_phone");
 define("PAGE_CATEGORY_CLOTHING", "page_category_clothing");
 define("SHOP_ITEM", "shop_item");
+
+/*Shopping_cart COLUMNS*/
+define("COLUMN_SHOPPING_CART_ID", "shopping_cart_id");
+define("COLUMN_SHOPPING_CART_USER_ID","user_id");
+define("COLUMN_SHOPPING_CART_ITEM_ID","item_id");
+define("COLUMN_SHOPPING_CART_QUANTITY","qty");
+define("COLUMN_SHOPPING_CART_IS_PURCHASED","is_purchased");
 
 
 

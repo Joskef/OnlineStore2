@@ -71,6 +71,15 @@ class users extends CI_Model
 		
 		
 	}
+
+	function insertItemShoppingCart($item_id, $user_id)
+    {
+        $insertItemShoppingCartData=array(
+            COLUMN_SHOPPING_CART_ITEM_ID => intval($item_id),
+            COLUMN_SHOPPING_CART_USER_ID => intval($user_id)
+        );
+        $this->db->insert("TABLE_SHOPPING_CART", $insertItemShoppingCartData);
+    }
 		
 	function deleteUsers($id) {
         $this->db->where(COLUMN_USER_ID, $id);
@@ -80,6 +89,11 @@ class users extends CI_Model
 	function deleteItems($id) {
 		$this->db->where(COLUMN_ITEM_ID, $id);
         $this->db->delete(items);
+    }
+
+    function deleteShoppingCartItem($id){
+        $this->db->where(COLUMN_SHOPPING_CART_ID);
+        $this->db->delete(shopping_cart);
     }
 
 
@@ -112,10 +126,30 @@ class users extends CI_Model
         $this->db->update(COLUMN_USER_PASSWORD, $password);
     }
 
+    function updateItemShoppingCartPurchase($id,$ispurchased){
+        $this->db->where(COLUMN_SHOPPING_CART_USER_ID, $id);
+        $this->db->update(COLUMN_SHOPPING_CART_IS_PURCHASED, $ispurchased);
+    }
+
+    function updateItemShoppingCartQty($id,$qty){
+        $this->db->where(COLUMN_SHOPPING_CART_USER_ID, $id);
+        $this->db->update(COLUMN_SHOPPING_CART_IS_QUANTITY, $qty);
+    }
+
     function updateUserEmail($id,$email){
         $this->db->where(COLUMN_USER_ID, $id);
         $this->db->update(COLUMN_USER_PASSWORD, $email);
     }
 
+    function searchCategory($category){
+        $this->db->select('*');
+        $this->db->from(TABLE_ITEM);
+        $this->db->where(COLUMN_ITEM_NAME, $category);
+        $this->db->order_by(COLUMN_ITEM_ID);
+
+        $query = $this->db->get();
+
+        return $query->result();
+    }
 }
 ?>
