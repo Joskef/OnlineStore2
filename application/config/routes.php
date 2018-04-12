@@ -60,5 +60,6 @@ $route['main'] = 'Controller/home';
 //$route['register'] = 'Controller/register';
 
 $route['page/(:any)'] = 'Controller/openPage/$1';
+$route[SHOP_ITEM.'/(:any)'] = 'Controller/shopItem/$1';
 
 $route['action/(:any)'] = 'Controller/doAction/$1';

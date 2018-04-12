@@ -298,4 +298,12 @@ class Controller extends CI_Controller
         $data = $this->users->searchItems($searchQuery);
         return $data;
     }
+
+    public function shopItem($item){
+        $data['item'] = $this->users->queryItemByID($item);
+
+        $this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('shop_item',$data);
+    }
 }

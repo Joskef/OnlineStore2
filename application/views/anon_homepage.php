@@ -59,10 +59,12 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                       <div class="card h-100">
                         <a href="<?php echo base_url() ?>page/<?php echo SHOP_ITEM?>"><img class="card-img-top" src="<?=base_url()?>assets/images/iphone.jpg" alt=""></a>
+                        <a href="<?php echo base_url() ?><?php echo SHOP_ITEM?>/<?= $item[COLUMN_ITEM_ID]?>"><img class="card-img-top" src="<?=base_url()?>assets/images/iphone.jpg" alt=""></a>
                         <hr>
                         <div class="card-body">
                           <h4 class="card-title">
                             <a href="<?php echo base_url() ?>page/<?php echo SHOP_ITEM?>"><?= $item[COLUMN_ITEM_NAME]?></a>
+                            <a href="<?php echo base_url() ?><?php echo SHOP_ITEM?>/<?= $item[COLUMN_ITEM_ID]?>"><?= $item[COLUMN_ITEM_NAME]?></a>
                           </h4>
                           <h5>$<?= $item[COLUMN_ITEM_PRICE]?></h5>
                           <p class="card-text"><?= $item[COLUMN_ITEM_DESC]?></p>
