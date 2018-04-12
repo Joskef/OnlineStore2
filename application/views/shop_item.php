@@ -26,7 +26,7 @@
               <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
               4.0 stars<br><br>
                 <?php if(isset($_SESSION['userType'])&&$_SESSION['userType'] == 3): ?>
-                    <div><button type="button" class="btn" id="cartButton">Add to Shopping Cart</button></div>
+                    <a class="nav-link" href="<?php echo base_url() ?>page/<?php echo SHOPPING_CART?>">Add to Shopping Cart</a>
                 <?php endif;?>
             </div>
           </div>
