@@ -24,7 +24,10 @@
               <h4>$<?= $item[COLUMN_ITEM_PRICE]?></h4>
               <p class="card-text"><?= $item[COLUMN_ITEM_DESC]?></p>
               <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-              4.0 stars
+              4.0 stars<br><br>
+                <?php if(isset($_SESSION['userType'])&&$_SESSION['userType'] == 3): ?>
+                    <div><button type="button" class="btn" id="cartButton">Add to Shopping Cart</button></div>
+                <?php endif;?>
             </div>
           </div>
           <!-- /.card -->
