@@ -67,7 +67,6 @@ class Controller extends CI_Controller
             case PAGE_CATEGORY_ELECTRONICS : $this->categoryPage("electronics"); break;
             case PAGE_CATEGORY_PHONE : $this->categoryPage("phone"); break;
             case PAGE_CATEGORY_CLOTHING : $this->categoryPage("clothing"); break;
-            case SHOP_ITEM : $this->shop_itemPage(); break;
             default : $this->home();
         }
     }
@@ -107,13 +106,7 @@ class Controller extends CI_Controller
         return $data;
     }
 
-    public function shop_itemPage()
-    {
-        //item stuff
-        $this->load->view('header');
-        $this->load->view('navbar');
-        $this->load->view('shop_item');
-    }
+
 
     public function doAction($action){
         switch ($action) {
@@ -279,5 +272,13 @@ class Controller extends CI_Controller
     public function searchItems($searchQuery){
         $data = $this->users->searchItems($searchQuery);
         return $data;
+    }
+
+    public function shopItem($item){
+        $data['item'] = $this->users->queryItemByID($item);
+
+        $this->load->view('header');
+        $this->load->view('navbar');
+        $this->load->view('shop_item',$data);
     }
 }

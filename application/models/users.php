@@ -33,6 +33,14 @@ class users extends CI_Model
         return $query->result();
     }
 
+    function queryItemByID($id){
+        $this->db->select('*');
+        $this->db->from(TABLE_ITEM);
+        $this->db->where(COLUMN_ITEM_ID,$id);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
     function insertUser($user)
     {
 
