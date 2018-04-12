@@ -24,11 +24,11 @@
 <!--                                <a data-toggle="dropdown">Admin<span class="caret"></span></a>-->
 <!--                                <ul class="dropdown-menu">-->
                     <li class="nav-item" id="ProdList">
-                        <a class="nav-link" href="<?php echo base_url() ?>action/<?php echo PRODUCT_LIST?>">Product List</a>
+                        <a class="nav-link" href="<?php echo base_url() ?>page/<?php echo PRODUCT_LIST?>">Product List</a>
                     </li>
 <!--                    TODO: not working-->
                         <li class="nav-item" id="CreateAdminAccount">
-                            <a class="nav-link" href="<?php echo base_url() ?>action/<?php echo CREATE_ADMIN_ACCOUNT?>">Create Account</a>
+                            <a class="nav-link" href="<?php echo base_url() ?>page/<?php echo CREATE_ADMIN_ACCOUNT?>">Create Account</a>
                         </li>
 <!--                    TODO: ditto-->
                                     <li class="nav-item" id="Login">
