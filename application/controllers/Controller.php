@@ -65,6 +65,8 @@ class Controller extends CI_Controller
             case PAGE_LOGIN : $this->loginPage(""); break;
             case PAGE_REGISTER : $this->registerPage(); break;
             case PAGE_CATEGORY_ELECTRONICS : $this->categoryPage("electronics"); break;
+            case PAGE_CATEGORY_PHONE : $this->categoryPage("phone"); break;
+            case PAGE_CATEGORY_CLOTHING : $this->categoryPage("clothing"); break;
             case SHOP_ITEM : $this->shop_itemPage(); break;
             default : $this->home();
         }

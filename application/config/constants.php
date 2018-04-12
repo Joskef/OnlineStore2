@@ -126,6 +126,8 @@ define("USER_SEARCH_ITEM","user_search_item");
 define("PAGE_LOGIN","page_login");
 define("PAGE_REGISTER","page_register");
 define("PAGE_CATEGORY_ELECTRONICS", "page_category_electronics");
+define("PAGE_CATEGORY_PHONE", "page_category_phone");
+define("PAGE_CATEGORY_CLOTHING", "page_category_clothing");
 define("SHOP_ITEM", "shop_item");
 
 

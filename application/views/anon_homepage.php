@@ -14,14 +14,10 @@
 
           <h4 class="my-4">Categories</h4>
           <ul class="list-group">
-            <a href="<?php echo base_url() ?>page/<?php echo PAGE_CATEGORY_ELECTRONICS?>" class="list-group-item">Electronic Devices</a>
+            <a href="<?php echo base_url() ?>page/<?php echo PAGE_CATEGORY_ELECTRONICS?>" class="list-group-item">Electronics</a>
 <!--              TODO: The rest of these-->
-            <a href="#" class="list-group-item">Women's Fashion</a>
-            <a href="#" class="list-group-item">Men's Fashion</a>
-            <a href="#" class="list-group-item">Home Appliances</a>
-            <a href="#" class="list-group-item">Lifestyle</a>
-            <a href="#" class="list-group-item">Accessories</a>
-          </ul>
+            <a href="<?php echo base_url() ?>page/<?php echo PAGE_CATEGORY_PHONE?>" class="list-group-item">Phone</a>
+            <a href="<?php echo base_url() ?>page/<?php echo PAGE_CATEGORY_CLOTHING?>" class="list-group-item">Clothing</a>
 
         </div>
         <!-- /.col-lg-2 -->
