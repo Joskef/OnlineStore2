@@ -21,7 +21,8 @@
 </head>
 
 <body>
-
+<div>Please login to access your cart</div>
+<?php if(isset($_SESSION['userType'])&&$_SESSION['userType'] == 3): ?>
 <div class="container">
     <table id="cart" class="table table-hover table-condensed">
         <thead>
@@ -63,6 +64,7 @@
         </tfoot>
     </table>
 </div>
+<?php endif;?>
 
 <!-- Bootstrap core JavaScript -->
 <script src="jquery/jquery.min.js"></script>

@@ -151,6 +151,7 @@ class Controller extends CI_Controller
     }
 
     public function login(){
+        $attempt = 0;
         $n = $_POST["username"];
         $p = $_POST["password"];
 
@@ -175,6 +176,12 @@ class Controller extends CI_Controller
 
             $user = $this->users->queryUserAccount($n);
 
+            if($attempt >= 3){
+                $errorMessage = "Too many failed attempts.";
+                $this->loginPage($errorMessage);
+//                FIXME: not working
+            }
+
             if($this->decryptString($p,$user[COLUMN_USER_PASSWORD]))
             {
                 $this->setSession($user);
@@ -183,6 +190,7 @@ class Controller extends CI_Controller
             }else{
                 $errorMessage = "Invalid username or password.";
                 $this->loginPage($errorMessage);
+                $attempt += 1;
             }
 
 

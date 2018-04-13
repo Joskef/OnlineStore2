@@ -20,8 +20,8 @@
 </head>
 
 <body>
-
-
+<div>Admin only</div>
+<?php if(isset($_SESSION['userType'])&&$_SESSION['userType'] == 1): ?>
 <div class="container" id="createContainer">
     <h2>Create New Administrative Account</h2>
     <br>
@@ -88,6 +88,7 @@
         </div>
     </div>
 </div>
+<?php endif;?>
 
 <!-- Bootstrap core JavaScript -->
 <script src="jquery/jquery.min.js"></script>

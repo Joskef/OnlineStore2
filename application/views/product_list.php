@@ -20,8 +20,8 @@
 </head>
 
 <body>
-
-
+<div>Admin only</div>
+<?php if(isset($_SESSION['userType'])&&$_SESSION['userType'] == 1): ?>
 <div class="container">
     <table id="cart" class="table table-hover table-condensed">
         <thead>
@@ -63,6 +63,7 @@
         </tfoot>
     </table>
 </div>
+<?php endif;?>
 
 <!-- Bootstrap core JavaScript -->
 <script src="jquery/jquery.min.js"></script>
